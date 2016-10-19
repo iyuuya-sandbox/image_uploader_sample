@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :fileable_type %>
+    <%= f.text_field :fileable_type %>
+  </div>
+
+  <div class="field">
     <%= f.label :caption %>
     <%= f.text_field :caption %>
   </div>
@@ -26,21 +31,6 @@
     <%= f.label :file %>
     <%= f.file_field :file %>
     <%= f.hidden_field :file_cache %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content_type %>
-    <%= f.text_field :content_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :digest %>
-    <%= f.text_field :digest %>
   </div>
 
   <div class="actions">
