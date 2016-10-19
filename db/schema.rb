@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019085844) do
+ActiveRecord::Schema.define(version: 20161019090841) do
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "fileable_type"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20161019085844) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "ユーザー" do |t|
+    t.string   "name"
+    t.integer  "profile_image_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

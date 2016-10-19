@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Profile image caption:</strong>
+  <%= @user.profile_image.try(:caption) %>
+  <%= image_tag @user.profile_image.file_url if @user.profile_image.try(:file?) %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
