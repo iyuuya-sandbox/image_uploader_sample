@@ -13,8 +13,8 @@ class Image < ApplicationRecord
   private
 
   def set_meta_info
-    self.name = self.file.filename
-    self.content_type = self.file.content_type
-    self.digest = self.file.digest
+    self.name ||= self.file.filename
+    self.content_type ||= self.file.content_type
+    self.digest ||= self.file.digest
   end
 end
