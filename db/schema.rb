@@ -10,6 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161019083911) do
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "fileable_type"
+    t.integer  "fileable_id"
+    t.string   "caption"
+    t.string   "file"
+    t.string   "name"
+    t.string   "content_type"
+    t.string   "digest"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["fileable_type", "fileable_id"], name: "index_images_on_fileable_type_and_fileable_id", using: :btree
+  end
 
 end
