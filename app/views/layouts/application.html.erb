@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <div class="nav">
+      <span><%= link_to 'Images', images_path %></span>
+      <span><%= link_to 'Posts', posts_path %></span>
+    </div>
     <%= yield %>
   </body>
 </html>
