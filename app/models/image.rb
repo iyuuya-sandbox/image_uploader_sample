@@ -13,8 +13,11 @@ class Image < ApplicationRecord
   private
 
   def set_meta_info
-    self.name ||= self.file.filename
-    self.content_type ||= self.file.content_type
-    self.digest ||= self.file.digest
+    if file.present? && file_changed?
+      self.name ||= file.filename
+      self.content_type ||= file.content_type
+      self.digest ||= file.digest
+      logger.debug file.size
+    end
   end
 end
