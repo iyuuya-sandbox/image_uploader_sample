@@ -10,7 +10,12 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
-    send_data @image.file.read, filename: @image.name, type: @image.content_type, disposition: 'inline'
+    if cookies[:file_auth_token] == 'hoge'
+      send_data @image.file.read, filename: @image.name, type: @image.content_type, disposition: 'inline'
+    else
+      cookies[:file_auth_token] = 'fuga'
+      head 404
+    end
   end
 
   # GET /images/new
