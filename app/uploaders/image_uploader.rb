@@ -17,7 +17,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def digest
-    binding.pry
     @digest ||= Digest::SHA256.hexdigest(model.send(mounted_as).read.to_s)
   end
 
