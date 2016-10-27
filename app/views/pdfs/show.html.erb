@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>File:</strong>
+<div>
+  <%= @pdf.file.filename %>
+  <div>
+    <div>
+      <%= image_tag @pdf.file_url(:thumb) %>
+    </div>
+</p>
+
+<%= link_to 'Edit', edit_pdf_path(@pdf) %> |
+<%= link_to 'Back', pdfs_path %>
